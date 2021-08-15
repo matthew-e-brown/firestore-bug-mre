@@ -18,8 +18,14 @@
       <input id="bar" type="text" v-model="bar" />
       <button type="button" @click="setBar">Update</button>
     </div>
-
   </form>
+
+  <p>
+    The relevant information can be found
+    <a href="https://github.com/firebase/firebase-js-sdk/issues/5302">at this GitHub issue</a>.
+    The code that causes this issue can be found
+    <a href="https://github.com/matthew-e-brown/firestore-bug-mre">at this GitHub repo</a>.
+  </p>
 </template>
 
 <script lang="ts">

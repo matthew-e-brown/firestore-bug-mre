@@ -1,7 +1,7 @@
 import { doc, onSnapshot, setDoc, Unsubscribe, updateDoc } from 'firebase/firestore';
 import { firestore } from '@/firebase';
 
-type StorageItem = { 'foo': number, bar: string };
+type StorageItem = { foo: number, bar: string };
 
 
 /**
@@ -44,10 +44,10 @@ export async function setField<K extends keyof StorageItem>(
 
   const docRef = doc(firestore, path);
 
-  // Only update the key we provide
+  // Only update the particular field we provide, not the whole document
   const data = { [key]: value };
 
-  // If it's not found, set it with the one field
+  // If it's not found, set a new document that has the single field set on it
   return updateDoc(docRef, data).catch(() => setDoc(docRef, data));
 
 }
